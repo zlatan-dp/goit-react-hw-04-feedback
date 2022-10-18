@@ -32,15 +32,16 @@ export class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const options = Object.keys(this.state);
+
     return (
       <Wrapper>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={options}
             onLeaveFeedback={this.FeedbackCount}
           />
         </Section>
-
         <Section title={'Statistics'}>
           {good + neutral + bad ? (
             <Statistics
